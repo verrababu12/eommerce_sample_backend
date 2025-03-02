@@ -1,0 +1,64 @@
+GET http://localhost:3001
+
+###
+
+POST http://localhost:3001/api/users/register
+Content-Type: application/json
+
+{
+    "name":"Madhu",
+    "email":"madhu@gmail.com",
+    "password":"madhu143"
+}
+
+###
+POST http://localhost:3001/api/users/login
+Content-Type: application/json
+
+{
+    "email":"veeru@gmail.com",
+    "password":"veeru143"
+}
+
+###
+POST http://localhost:3001/api/products/all-products
+Content-Type: application/json
+
+[
+    {
+        "brand": "Samsung",
+        "image_url": "https://assets.ccbp.in/frontend/react-js/ecommerce/appliances-washing-machine.png",
+        "price": 22490,
+        "rating": "4.5",
+        "title": "Front Load Machine"
+    },
+    {
+        "brand": "Fossil",
+        "image_url": "https://assets.ccbp.in/frontend/react-js/ecommerce/electronics-simple-belt-watch.png",
+        "price": 14955,
+        "rating": "4.4",
+        "title": "Collider Black Dial Men's Watch"
+    }
+]
+
+###
+POST http://localhost:3001/api/products/only-admin
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzE0YWJmNjY3YTQ5YmIxMjY2NTczOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MDkxMzI0MSwiZXhwIjoxNzQzNTA1MjQxfQ.3Y86ujzDtPblGHH0mWt-uE9niNrs1ao1n28sI6lcRCw
+
+{
+    "brand":"Puma",
+    "image_url":"https://image.com",
+    "price":250,
+    "rating":"4.5",
+    "title":"T-Shirt"
+}
+
+###
+PUT http://localhost:3001/api/products/67c17be4d38029bc5d7a2076
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzE0YWJmNjY3YTQ5YmIxMjY2NTczOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MDkxMzI0MSwiZXhwIjoxNzQzNTA1MjQxfQ.3Y86ujzDtPblGHH0mWt-uE9niNrs1ao1n28sI6lcRCw
+
+{
+    "price":500
+}
